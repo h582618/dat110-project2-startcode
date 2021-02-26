@@ -10,10 +10,9 @@ public class DeleteTopicMsg extends Message {
 	// Constructor, get/set-methods, and toString method
 	// as described in the project text
     String topic;
-    String user;
 
     public DeleteTopicMsg(String user, String topic) {
-        this.user = user;
+        super(MessageType.DELETETOPIC, user);
         this.topic = topic;
     }
 
@@ -33,7 +32,7 @@ public class DeleteTopicMsg extends Message {
     public String toString() {
         return "DeleteTopicMsg{" +
                 "topic='" + topic + '\'' +
-                ", user='" + user + '\'' +
+                ", user='" + super.toString() + '\'' +
                 '}';
     }
 }

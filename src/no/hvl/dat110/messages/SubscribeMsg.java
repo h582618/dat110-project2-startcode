@@ -11,10 +11,9 @@ public class SubscribeMsg extends Message {
 	// as described in the project text
 
     String topic;
-    String user;
 
     public SubscribeMsg(String user, String topic) {
-        this.user = user;
+        super(MessageType.SUBSCRIBE, user);
         this.topic = topic;
     }
 
@@ -34,7 +33,7 @@ public class SubscribeMsg extends Message {
     public String toString() {
         return "SubscribeMsg{" +
                 "topic='" + topic + '\'' +
-                ", user='" + user + '\'' +
+                ", user='" + super.toString() + '\'' +
                 '}';
     }
 }

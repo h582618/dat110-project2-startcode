@@ -4,7 +4,7 @@ import no.hvl.dat110.common.TODO;
 
 public class PublishMsg extends Message {
 	
-	// message sent from client to create publish a message on a topic 
+	// message sent from client to create publish a message on a topic
 
 	// TODO:
 	// Implement object variables - a topic and a message is required
@@ -13,11 +13,10 @@ public class PublishMsg extends Message {
 	// as described in the project text
 
 	String topic;
-	String user;
 	String message;
 
 	public PublishMsg(String user, String topic,String message) {
-		this.user = user;
+		super(MessageType.PUBLISH, user);
 		this.topic = topic;
 		this.message = message;
 	}
@@ -28,11 +27,6 @@ public class PublishMsg extends Message {
 
 	public void setTopic(String topic) {
 		this.topic = topic;
-	}
-
-	@Override
-	public String getUser() {
-		return user;
 	}
 
 	public void setMessage(String message) {
@@ -47,8 +41,9 @@ public class PublishMsg extends Message {
 	public String toString() {
 		return "PublishMsg{" +
 				"topic='" + topic + '\'' +
-				", user='" + user + '\'' +
+				", user='" + super.toString() + '\'' +
 				", message='" + message + '\'' +
 				'}';
 	}
+
 }

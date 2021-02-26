@@ -5,10 +5,9 @@ public class CreateTopicMsg extends Message {
 	// message sent from client to create topic on the broker
 
     String topic;
-    String user;
 
     public CreateTopicMsg(String user, String topic) {
-        this.user = user;
+        super(MessageType.CREATETOPIC, user);
         this.topic = topic;
     }
 
@@ -28,7 +27,7 @@ public class CreateTopicMsg extends Message {
     public String toString() {
         return "CreateTopicMsg{" +
                 "topic='" + topic + '\'' +
-                ", user='" + user + '\'' +
+                ", user='" + super.toString() + '\'' +
                 '}';
     }
 }
